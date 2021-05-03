@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-2">
+      <mat-form-field appearance="legacy" class="dropDown">
+        <mat-label>feild</mat-label>
+        <mat-select (selectionChange)="getEmpField($event.value)">
+          <!--(selectionChange)="getEmpField($event.value)"-->
+          <mat-option  *ngFor="let feild of fields" [value]="feild.id_field" >{{feild.field}}</mat-option>
+          
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-sm-10">
+      <div class="row">
+        <app-card-empois class="col-12 col-sm-6" *ngFor="let emp of emps" [item]="emp" ></app-card-empois><br>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <a href="" [routerLink]="['/postulation']" routerLinkActive="router-link-active" >
+    < Postulation</a> </div>

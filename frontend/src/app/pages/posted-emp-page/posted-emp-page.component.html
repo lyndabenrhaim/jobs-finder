@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Offer >
+  </div>
+  <div class="row">
+    
+      <app-card-emp-post class="col-12 col-sm-6" *ngFor="let emp of empPosted" [emp]="emp"></app-card-emp-post>
+      
+  </div>
+
+
+
+  
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Add an offer</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control"  placeholder="Job title" #JobTitle>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control"  placeholder="Job price" #JobPrice>
+          </div>
+          <input type="submit"  id="submit" style="display: none;" (click)="addJob(JobTitle.value,JobPrice.value,$event)">
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-info" (click)="submit()" >Add</button>
+      </div>
+    </div>
+  </div>
+</div>
